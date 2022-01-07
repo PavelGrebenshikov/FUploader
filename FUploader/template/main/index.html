@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <section>
+        <div class="title">
+            <div class="wl-title">
+                Welcome to FUpload
+            </div>
+        </div>
+        <div class="introduction">
+            Here you can upload your text file and select certain settings
+        </div>
+        <div class="wp-button">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for input_file in form %}
+                    {{ input_file }}
+                {% endfor %}
+                <button class="btn-upload" type="submit">Upload File</button>
+                <button class="to-send" hidden="hidden" type="submit"></button>
+            </form>
+            <label class="file-text">No file selected</label>
+        </div>
+{% endblock content %}
+
+{% block js %}
+<script src="{% static '/js/scripts.js' %}"></script>
+{% endblock js %}

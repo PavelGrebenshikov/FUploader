@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="marker">
+    <div class="border-marker">
+        <p>
+            This text is from a file
+        </p>
+    </div>
+</div>
+<div class="content">
+    <div class="borders-content">
+        {{ text }}
+    </div>
+    <span class="ln-wrapper">
+        Количество символов в файле: {{ length }}
+    </span>
+</div>
+
+{% endblock content %}
