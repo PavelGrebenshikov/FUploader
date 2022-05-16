@@ -1,9 +1,9 @@
 from django import forms
 
 OPTIONS = [
-    ("d_space", "Delete Space"),
-    ("d_symbols", "Delete Symbols"),
-    ("f_text", "format text"),
+    ("r_spaces", "Remove spaces"),
+    ("d_char", "Delete characters"),
+    ("s_text", "Show text"),
 ]
 
 class FileUploadOptionsForm(forms.Form):

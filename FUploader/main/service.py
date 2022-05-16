@@ -15,12 +15,14 @@ def processong_text(file, options):
         return ("Verification passed", True)
 
     if True in validation_to_file(file=file):
-        _file = file.read().decode('utf-8')
-        if options == "d_space":
-            _file = _file.replace('\n', ' ').replace(' ', '')
-            return _file.rstrip().strip().rstrip()
-        elif options == "d_symbols":
-            pass
+        _file = str(file.read().decode('Windows-1251'))
+        if options == "r_spaces":
+            return _file.replace('\n', '').replace(' ', '')
+        if options == "d_char":
+            content = "".join(c for c in _file if c.isalpha())
+            return content
+        if options == "s_text":
+            return _file
     
     
     
